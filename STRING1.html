@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>string</title>
+<div id ="message"> </div>
+<script type = "text/javascript">
+
+function write(message){
+	document.getElementById('message').innerHTML += message + '<br/>';
+	
+	
+}
+function newParagraph(){
+	write("");
+}
+// charAt - charAt(index) return the character (as a string)
+var character = "abcd".charAt(3);
+write("third character in 'abcd' is: " +character + "<br/>");
+var str ="hello word";
+write("last character: " +str.charAt(str.length -1));
+
+//charCodeAt(index) : tra ve ma unicode cua ky tu
+write("first character :" +str.charCodeAt(0));
+
+//write("Type of character is:" + typeof character);
+newParagraph();
+//indexOf - indexOf(string) return the index of the specified string
+var index = "abcd".indexOf("b");
+write("Index in 'c' in 'abcd' is (using 'search'): " +index);
+//replace - replace(from,to) replaces the first argument with the second argument
+var lyric ="3 oh 3 it's a magic number";
+write('lyric.replace("3","4")');
+write ('lyric: '+ lyric);// chuoi ban dau k thay doi
+write('lyric.replace(/3/,"4"):' +lyric.replace(/3/,"4"));
+write('lyric.replace(/3/g,"4") :' +lyric.replace(/3/g,"4"));
+newParagraph();
+
+//slice - return a substring of a string
+var letter = ['a','b','c','d'];
+
+var sliced = letter.slice(0,3);
+for(var i=0;i<sliced.length;i++)
+{
+	write(sliced[i]);
+}
+write(" slice (2) :" + str.slice(2));
+//split(separator) - slipts a string on separator - tach 1 chuoi thanh 1 mang voi moi phan tu la cac chuoi con
+var words = " hom nay bau troi that trong xanh".split(" ");
+for(var i=0; i< words.length;i++){
+	write(words[i]);
+}
+newParagraph();
+document.write(str.split(" ") + "<br/>");
+
+//substr() - cat 1 so ky tu ra khoi chuoi lon dua vao 1 diem bat dau va so ky tu can lay
+document.write(str.substr(3,4) + "<br/>");
+
+//substring() : tach 1 chuoi ra khoi chuoi lon o khoang giua 2 chu so
+document.write(str.substring(3,5) + "<br/>");
+
+//toLowerCase() chuyen 1 chuoi sang chu thuong
+ var name = "heHa";
+ write(" Lower case of 'haHa' : "+name.toLowerCase());
+ // toUpperCase
+ write(" Upper case of 'heHa' : "+name.toUpperCase());
+</script>
+</head>
+<body>
+</body>
+</html>
