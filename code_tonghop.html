@@ -1,0 +1,141 @@
+<html>
+<head>
+<div id = "message"></div>
+<script type = "text/javascript">
+function write(message){
+	document.getElementById('message').innerHTML += message + "<br/>";
+}
+
+// variables and assignment
+var name = "Lima";
+write(name);
+
+var answer = 42;
+write(answer);
+write(" ");
+// null coalescing
+var isNull = null;
+var value = isNull || 1;
+write(value);
+
+// objects
+var person = {
+	name: " He ho ha ha",
+	age:21
+	};
+	write(person.name);
+	write(person.age);
+
+//function
+function add(first, second){
+	return (first + second);
+}
+write(add(8,10));
+
+// anonymous function 
+var square = function(number){
+	return number * number;
+}
+	write(square(4));
+
+	
+// equality - dang thuc 
+
+write("comparing simple types");
+write("cat" == "cat"); //tra lai true
+write(42 == 40+2);
+write("");
+
+write("with type coercion");
+write("42" == 40+2);// dung == tu dong chuyen doi kieu con dung === k tu dong chuyen doi kieu
+write(null == undefined);
+write(false == 0);
+wirte('\h' == 0);
+wirte(" ");
+
+write("without type coercion");
+write(42 === 40+2);
+write("42" === 40+2);
+write(null === undefined);
+write(false === 0);
+write('\t' === 0);
+write("");
+
+
+write("comparing objects");
+write({prop: 0} === {prop : 0});// doi tuong giong nhau khong bang nhau
+var first = {prop :0};
+var second = first;
+write(first === second);
+
+
+// control flow
+
+//if
+if (2>1) {
+	write("Two is greater than one");
+	
+}
+else {
+	write("one is greater than tow");
+}
+write("");
+
+//while
+var keepGoing = true;
+while (keepGoing){
+	write("vong lap");
+	keepGoing = false;
+}
+write("");
+
+//for
+
+for(var i=0;i<=5;i++){
+	write(i);
+}
+write("");
+
+//switch
+var trafficLight = "yellow";
+write("The traffic light is : " + trafficLight);
+
+switch(trafficLight){
+	case "red":
+		write("stop");
+		break;
+	case "yellow":
+		write("prepare to stop");
+		break;
+	case "green":
+		write("go!");
+		break;
+	default:
+		write(trafficLight + "is an unrecognized color");
+}
+write("");
+
+// ternary operator
+write(true? "it was true!" : "it was false :(" );
+
+// error handling
+var answer = nonExistantVariable;
+ // handling exceptions
+ 
+ try{
+	answer = nonExistantVariable;
+ }catch(e){
+	write(e.name);
+	write(e.message);
+ }
+ 
+/*thow{
+	name: 'MyCustomError',
+	message: 'Something has gone wrong'
+	
+};*/
+
+</script>
+</head>
+
+</html>
