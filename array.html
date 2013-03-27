@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>array </title>
+<div id = "message" ></div>
+<script type = "text/javascript">
+function write(message) {
+	document.getElementById('message').innerHTML += message + '<br/>'
+}
+function newParagraph(){
+	write(" ");
+}
+// liet ke
+var letter = ['a','b','c','d'];
+for( var i=0;i< letter.length;i++){
+	write(letter[i]);
+}
+newParagraph();
+/*var arr = new Array('a','b','c','d','e');
+for(var x in arr )
+{
+	alert(arr[x]);
+}
+newParagraph();*/
+// stack methods
+letter.push('f');
+write("['a','b','c','d'].push('f'): " +letter);
+write("['a','b','c','d','f'].pop() : " +letter.pop());
+write("letter :" +letter);
+newParagraph();
+
+// reverse - nghich dao
+write("['a','b','c','d'].reverse() : " + letter.reverse());
+newParagraph();
+
+// slice( start, end)  - copies part of an arry
+write("['a','b','c','d'].slice(1,3) : " +['a','b','c','d'].slice(1,3));
+
+// splice ( start, count) - takes part of an array
+var collection = ['a','b','c','d'];
+write("['a','b','c','d'].splice(1,3) :" + collection.splice(1,3));
+write("collection :" +collection);
+newParagraph();
+
+// sort 
+write("['a','b','c','d','e'].sort :" + ['g','c','b','a','e'].sort());
+write("[2,1,90,3,80,4,78].sort() : " +[100,1,90,3,80,4,78].sort());
+write([100,1,90,3,80,4,78].sort(function(first,second){
+	return first - second;
+})); 
+</script>
+</head>
+</html>
