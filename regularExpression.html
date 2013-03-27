@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>regular Expresssion </title>
+<div id = "message"></div>
+<script type = "text/javascript">
+function write(message){
+	document.getElementById('message').innerHTML += message + '<br/>';
+}
+function newParagraph()
+{
+	write(" ");
+}
+
+//search() - tim kiem tra va ket qua la chi so cua ky tu do
+var result = "abcde".search("c");
+write("result search 'c'  in 'abcde' is :" +result);
+newParagraph();
+
+// exec
+var input = "text with some <strong> hehehahaha</strong> parts.";
+var expression = /<strong>(.*)<\/strong>/;
+var results = expression.exec(input);
+write(" substring :" +results[0]);
+write("first capture group: " +results[1]);
+newParagraph();
+
+//test /\d/ lay ky tu k phai la so
+var containsANumber = /\d/.test("abc4de");
+write("abc4de contains a number: " +containsANumber);
+
+//replace - replacement can be a string or a function
+// \w de tim 1 ky tu cu phap /\w/
+var update = "Sach Hay".replace(/(\w+) (\w+)/g, function (match, capture1, capture2){
+return capture2.toUpperCase()+","+capture1;
+});
+write(update);
+newParagraph();
+
+</script>
+<body>
+</body>
+</head>
+</html>
